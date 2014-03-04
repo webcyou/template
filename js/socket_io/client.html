@@ -1,0 +1,19 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script src="/socket.io/socket.io.js"></script>
+<title>node.js & socket.io</title>
+</head>
+<body>
+<h1>sokets.io test</h1>
+<script>
+(function() {
+    var socket = io.connect();
+    socket.on('greeting', function (data, fn) {
+        var result = confirm(data.message);
+        fn(result);
+    });
+})();
+</script>
+</body>
+</html>
